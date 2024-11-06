@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import dj_database_url
+ 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,6 +81,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DATABASES['default']= dj_database_url.parse('postgresql://django_render_db_kemp_user:MpLanaeJDC8uRwIB8gOATPIIzktR0Tl9@dpg-csltqi8gph6c738j35g0-a/django_render_db_kemp')
 
 
 # Password validation
@@ -124,4 +126,4 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = ['localhost','https://web-production-4c55.up.railway.app/']
+
