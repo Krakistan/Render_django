@@ -1,9 +1,11 @@
 #!/bin/bash
 
-
-set -o errexit
-
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-
+set -o errexit
 python manage.py collectstatic --noinput
 python manage.py migrate
+python manage.py runserver
+
+
